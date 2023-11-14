@@ -1,0 +1,105 @@
+:root {
+    --main-pink: #FFD1C9;
+    --main-brown: #704040;
+    --main-orange: #FFB06E;
+    --main-white: #FFFFFF;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: 300ms;
+    font-family: 'Poppins';
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    font-size: 24px;
+    background-color: var(--main-pink);
+    color: var(--main-brown);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+header {
+    display: block;
+    opacity: 0;
+    animation: slideBottom 500ms ease forwards;
+    animation-delay: 300ms;
+}
+
+header p {
+    font-family: 'Comic Sans MS';
+}
+
+main {
+    max-width: calc(100% / 1.8);
+    margin: 10px auto;
+}
+
+#displayQuote {
+    background-color: var(--main-white);
+    padding: 20px 40px;
+    border-radius: 20px;
+    display: none;
+    opacity: 0;
+    animation: slideLeft 500ms ease forwards;
+    animation-delay: 300ms;
+}
+
+button {
+    background-color: var(--main-orange);
+    border: none;
+    font-size: 24px;
+    padding: 8px 10px;
+    border-radius: 20px;
+    color: var(--main-white);
+    margin: 20px;
+    opacity: 0;
+    animation: slideTop 500ms ease forwards;
+    animation-delay: 300ms;
+}
+
+button:hover {
+    cursor: pointer;
+    box-shadow: 0 0 11px rgba(0, 0, 0, 0.25);
+}
+
+/* ------------------- ANIMATION ------------------- */
+@keyframes slideBottom {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
